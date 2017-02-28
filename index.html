@@ -23,22 +23,22 @@
 		
 		<form>
 			<label for="fullname" class="labels">Full Name</label>
-			<input type="text" name="fullname" placeholder="Required" class="inputs"/>
+			<input type="text" id="fullname" placeholder="Required" class="inputs" required>
 
 			<label for="email" class="labels">Email Address</label>
-			<input type="email" name="email" placeholder="Required" class="inputs"/>
+			<input type="email" id="email" placeholder="Required" class="inputs" required>
 
 			<label for="phone" class="labels">Phone Number</label>
-			<input type="tel" name="phone" class="inputs"/>
+			<input type="tel" id="phone" class="inputs"/>
 
 			<label for="address" class="labels">Street Address</label>
-			<input type="text" name="address" class="inputs"/>
+			<input type="text" id="address" class="inputs"/>
 
 			<label for="city" class="labels">City</label>
-			<input type="text" name="city" class="inputs"/>
+			<input type="text" id="city" class="inputs"/>
 
 			<label for="state" class="labels">State</label>
-			<select name="state" class="inputs">
+			<select id="state" class="inputs">
 				<option value="AL">Alabama</option>
 				<option value="AK">Alaska</option>
 				<option value="AZ">Arizona</option>
@@ -93,23 +93,41 @@
 			</select>
 
 			<label for="zip" class="labels">Zip Code</label>
-			<input type="text" name="zip" class="inputs"/>
+			<input type="text" id="zip" class="inputs"/>
 		
-			<h2 class="form-titles">Newsletter</h2>
+			<h2 class="form-titles double-underline">Newsletter</h2>
 
 			<p>Select the newsletters you would like to receive:</p>
 
-			<input type="checkbox" name="htmlnews" checked/><label for="htmlnews" class="labels">HTML News</label>
-			<input type="checkbox" name="cssnews"/><label for="cssnews" class="labels">CSS News</label>
-			<input type="checkbox" name="jsnews"/><label for="jsnews" class="labels">Javascript News</label>
+			<div class="newsletter-options">
+				<input type="checkbox" id="htmlnews" checked/>
+				<label for="htmlnews" class="labels">HTML News</label>
+			</div><!--/.newsletter-options-->
+			
+			<div class="newsletter-options">
+				<input type="checkbox" id="cssnews"/>
+				<label for="cssnews" class="labels">CSS News</label>
+			</div><!--/.newsletter-options-->
+
+			<div class="newsletter-options">
+				<input type="checkbox" id="jsnews"/>
+				<label for="jsnews" class="labels">Javascript News</label>
+			</div><!--/.newsletter-options-->
 
 			<p>Newsletter Format:</p>
 
-			<input type="radio" name="html" checked/><label for="html" class="labels">HTML</label>
-			<input type="radio" name="plaintext"/><label for="plaintext" class="labels">Plain Text</label>
+			<div class="newsletter-options">
+				<input type="radio" id="html" checked/>
+				<label for="html" class="labels">HTML</label>
+			</div><!--/.newsletter-options-->
 
-			<label for="othertopics" class="labels">Other Topics you'd like to hear about:</label>
-			<textarea class="inputs" name="othertopics"></textarea>
+			<div class="newsletter-options">
+				<input type="radio" id="plaintext"/>
+				<label for="plaintext" class="labels">Plain Text</label>
+			</div><!--/.newsletter-options-->
+
+			<label for="othertopics" class="labels">Other topics you'd like to hear about:</label>
+			<textarea class="inputs" id="othertopics"></textarea>
 
 			<button type="submit" name="signup" class="sign-up-button">Sign Up</button> 
 

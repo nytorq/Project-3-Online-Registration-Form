@@ -61,22 +61,35 @@ h3 {
     font-weight: 100;
     padding-bottom: 23px;
     border-bottom: 5px solid #2d3945;
+    position: relative;
 }
 
 h3:after {
     content: "";
     display: block;
     position: absolute;
-    width: 92%;
+    width: 100%;
     background: #2d3945;
     height: 2px;
-    left: 8px;
-    top: 20px;
+    top: 81px;
 }
 
 .form-titles {
 	text-align: left;
+}
 
+.double-underline {
+    position: relative;
+}
+
+.double-underline::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    background: #2d3945;
+    height: 2px;
+    top: -34px;
 }
 
 /* ---- Forms & Form Elements ---- */
@@ -84,6 +97,14 @@ h3:after {
 label,
 .inputs {
 	display: block;
+}
+
+.newsletter-options {
+    display: block;
+}
+
+.newsletter-options * {
+    display: inline;
 }
 
 .inputs:focus {
@@ -103,6 +124,16 @@ label,
     padding: 10px;
     width: 100%;
     margin-bottom: 13px;
+}
+
+#fullname:valid, 
+#email:valid {
+    border: 2px solid #00b51c;
+    background-color: rgba(0, 189, 152, 0.06);
+}
+
+input[id*="zip"] {
+    margin-bottom: 75px;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -126,4 +157,19 @@ textarea {
 .copyright {
 	text-align: center;
     color: rgba(157, 163, 168, 0.71);
+}
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media (min-width: 767px) {
+
+    /* ---- General Layout Styles---- */
+
+    .container {
+        width: 60%;
+        /*margin: 0 auto;*/
+    }
+
 }
