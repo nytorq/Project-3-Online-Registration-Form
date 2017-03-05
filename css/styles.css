@@ -62,6 +62,7 @@ h3 {
     padding-bottom: 23px;
     border-bottom: 5px solid #2d3945;
     position: relative;
+    min-height: 80px;
 }
 
 h3:after {
@@ -89,7 +90,7 @@ h3:after {
     width: 100%;
     background: #2d3945;
     height: 2px;
-    top: -34px;
+    top: -14px;
 }
 
 /* ---- Forms & Form Elements ---- */
@@ -126,22 +127,68 @@ label,
     margin-bottom: 13px;
 }
 
+.inputs {
+    -webkit-transition: border 0.5s ease-in;
+       -moz-transition: border 0.5s ease-in;
+         -o-transition: border 0.5s ease-in;
+            transition: border 0.5s ease-in;
+}
+
+#fullname,
+#email,
+#zip {
+    -webkit-transition: background-color 0.5s, border 0.5s, background 0.5s ease-in;
+       -moz-transition: background-color 0.5s, border 0.5s, background 0.5s ease-in;
+         -o-transition: background-color 0.5s, border 0.5s, background 0.5s ease-in;
+            transition: background-color 0.5s, border 0.5s, background 0.5s ease-in;
+}
+
 #fullname:valid, 
-#email:valid {
+#email:valid,
+#zip:valid {
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/check.svg);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: 10px 10px;
+    padding-left: 40px;
     border: 2px solid #00b51c;
     background-color: rgba(0, 189, 152, 0.06);
 }
 
-input[id*="zip"] {
-    margin-bottom: 75px;
+#fullname:focus:invalid, 
+#email:focus:invalid,
+#zip:focus:invalid {
+    border: 2px solid red;
+    background-color: rgba(255, 0, 0, 0.06);
 }
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+.validation-text {
+    font-size: .9em;
+    color: rgba(255, 0, 0, 0.77);
+    max-height: 0;
+    overflow: hidden;
+    transition: .5s ease-in;
+    margin: 0px 0px 30px 0;
+}
+
+#zip:focus:invalid ~ .validation-text {
+    max-height: 100px;
+}
+
+/*input[id*="zip"] {
+    margin-bottom: 75px;
+}
+*/
+input::-webkit-input-placeholder {
   text-align: right;
 }
 
 textarea {
 	height: 125px;
+}
+
+textarea::placeholder {
+    text-align: left;
 }
 
 .sign-up-button {

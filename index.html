@@ -93,7 +93,8 @@
 			</select>
 
 			<label for="zip" class="labels">Zip Code</label>
-			<input type="text" id="zip" class="inputs"/>
+			<input type="text" id="zip" class="inputs" pattern="\b\d{5}\b" required/>
+			<div class="validation-text"> 5 digits &#40;no letters&#41;&#44; please.</div><!--/.validation-text-->
 		
 			<h2 class="form-titles double-underline">Newsletter</h2>
 
@@ -117,17 +118,17 @@
 			<p>Newsletter Format:</p>
 
 			<div class="newsletter-options">
-				<input type="radio" id="html" checked/>
+				<input type="radio" name="newsletter-options" id="html" checked/>
 				<label for="html" class="labels">HTML</label>
 			</div><!--/.newsletter-options-->
 
 			<div class="newsletter-options">
-				<input type="radio" id="plaintext"/>
+				<input type="radio" name="newsletter-options" id="plaintext"/>
 				<label for="plaintext" class="labels">Plain Text</label>
 			</div><!--/.newsletter-options-->
 
 			<label for="othertopics" class="labels">Other topics you'd like to hear about:</label>
-			<textarea class="inputs" id="othertopics"></textarea>
+			<textarea class="inputs" id="othertopics" placeholder="Other than cats or coffee"></textarea>
 
 			<button type="submit" name="signup" class="sign-up-button">Sign Up</button> 
 
